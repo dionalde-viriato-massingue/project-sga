@@ -214,47 +214,28 @@ public class Definicoes extends JFrame implements ActionListener{
          
       }
         if(e.getSource()==b3){
-          b1.setBackground( new Color(8,99,148)); 
-          b2.setBackground( new Color(8,99,148));
-          b3.setBackground( new Color(172,224,241));
-          b4.setBackground( new Color(8,99,148));
-          b5.setBackground( new Color(8,99,148));
-          b6.setBackground( new Color(8,99,148));
-          b7.setBackground( new Color(8,99,148));
-          new Inscricao();
+          new Inscric(cod,name);
           dispose();
         }
         if(e.getSource()==b4){
-          b1.setBackground( new Color(8,99,148)); 
-          b2.setBackground( new Color(8,99,148));
-          b3.setBackground( new Color(8,99,148));
-          b4.setBackground( new Color(172,224,241));
-          b5.setBackground( new Color(8,99,148));
-          b6.setBackground( new Color(8,99,148));
-          b7.setBackground( new Color(8,99,148));
+          
           new VgeralD(cod,name);
           dispose();
         }
          if(e.getSource()==b5){
-          b1.setBackground( new Color(8,99,148)); 
-          b2.setBackground( new Color(8,99,148));
-          b3.setBackground( new Color(8,99,148));
-          b4.setBackground( new Color(8,99,148));
-          b5.setBackground( new Color(172,224,241));
-          b6.setBackground( new Color(8,99,148));
-          b7.setBackground( new Color(8,99,148));
+          
           new Definicoes(cod, name);
           dispose();
         }
          if(e.getSource()==b6){
-          b1.setBackground( new Color(8,99,148)); 
-          b2.setBackground( new Color(8,99,148));
-          b3.setBackground( new Color(8,99,148));
-          b4.setBackground( new Color(8,99,148));
-          b5.setBackground( new Color(8,99,148));
-          b6.setBackground( new Color(172,224,241));
-          b7.setBackground( new Color(8,99,148));
+          if(e.getSource()==b6){
+            int  option=0;
+        option = JOptionPane.showConfirmDialog(null,"Deseja sair?","Confime",JOptionPane.YES_NO_OPTION);
+         if(option==JOptionPane.YES_OPTION){
           System.exit(0);
+          
+            }
+        }
         }
          if(e.getSource()==b7){
           b1.setBackground( new Color(8,99,148)); 

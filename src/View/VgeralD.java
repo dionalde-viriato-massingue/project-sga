@@ -259,7 +259,14 @@ public class VgeralD extends JFrame implements ActionListener{
           dispose();
         }
          if(e.getSource()==b6){
+            if(e.getSource()==b6){
+            int  option=0;
+        option = JOptionPane.showConfirmDialog(null,"Deseja sair?","Confime",JOptionPane.YES_NO_OPTION);
+         if(option==JOptionPane.YES_OPTION){
           System.exit(0);
+          
+            }
+        }
         }
          if(e.getSource()==b7){
   

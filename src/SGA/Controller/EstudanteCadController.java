@@ -33,6 +33,11 @@ public class EstudanteCadController {
     public ArrayList<EstudanteCadVO> getDados(){ 
         ArrayList<EstudanteCadVO> listarDadosE = estudanteDAO.recuperarEstudante(cod);      
         return listarDadosE;
-        
     }
+    
+     public ArrayList<EstudanteCadVO> countEstudantes(){ 
+        ArrayList<EstudanteCadVO> listarCountEst = estudanteDAO.countEstudantes();      
+        return listarCountEst;
+    }
+    
 }

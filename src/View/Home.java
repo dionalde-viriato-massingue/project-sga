@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -328,14 +329,14 @@ public class Home extends JFrame implements ActionListener{
           dispose();
         }
          if(e.getSource()==b6){
-          b1.setBackground( new Color(8,99,148)); 
-          b2.setBackground( new Color(8,99,148));
-          b3.setBackground( new Color(8,99,148));
-          b4.setBackground( new Color(8,99,148));
-          b5.setBackground( new Color(8,99,148));
-          b6.setBackground( new Color(172,224,241));
-          b7.setBackground( new Color(8,99,148));
+           if(e.getSource()==b6){
+            int  option=0;
+        option = JOptionPane.showConfirmDialog(null,"Deseja sair?","Confime",JOptionPane.YES_NO_OPTION);
+         if(option==JOptionPane.YES_OPTION){
           System.exit(0);
+          
+            }
+        }
         }
          if(e.getSource()==b7){
           b1.setBackground( new Color(8,99,148)); 

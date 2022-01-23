@@ -2,10 +2,12 @@
 package View;
 
 import SGA.Controller.EstudanteCadController;
+import SGA.Model.EstudanteCadVO;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.swing.*;
 
 public class Estudante extends JFrame implements ActionListener{
@@ -20,6 +22,11 @@ public class Estudante extends JFrame implements ActionListener{
     JComboBox cbIdade,cbNac,cbCurso,cbProv;
     JRadioButton rbM,rbF,rbEstado,rbS,rbC,rbSim,rbNao;
     ButtonGroup bgS,bgE,bgN;
+    
+     EstudanteCadController estudanteCont = new EstudanteCadController();
+    ArrayList<EstudanteCadVO> list = estudanteCont.countEstudantes();
+    
+    
     public Estudante(){
        
     setTitle("Cadastro Estudante");
@@ -27,7 +34,7 @@ public class Estudante extends JFrame implements ActionListener{
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     
     
-    
+   
      l5= new JLabel("Nome:");
      l5.setBounds(150,178, 200,98);
      tNome= new JTextField(15);
@@ -35,7 +42,7 @@ public class Estudante extends JFrame implements ActionListener{
      
      l6= new JLabel("Codigo: ");
      l6.setBounds(150,250, 200,98);
-    lCod= new JLabel("1033");
+    lCod= new JLabel(1000+list.size()+"");
      lCod.setBounds(210,286, 200,28);
     
      l7= new JLabel("Contacto: ");
@@ -44,7 +51,7 @@ public class Estudante extends JFrame implements ActionListener{
      tContact.setBounds(210,356, 200,28);
      
       l8= new JLabel("Faculdade: ");
-     l8.setBounds(150,390, 200,98);
+     l8.setBounds(146,390, 200,98);
      tFacul= new JTextField(15);
      tFacul.setBounds(210,426, 200,28);
       
@@ -235,10 +242,13 @@ public class Estudante extends JFrame implements ActionListener{
        
        EstudanteCadController es = new EstudanteCadController(id,nome,data,sexo,cadeira, facul,pais,prov,contacto);
        
+        lCod.setText(1001+list.size()+"");
         tNome.setText("");
         t2.setText("");
         tContact.setText("");
         tFacul.setText("");
+        tData.setText("");
+        
         }
         if(e.getSource()==bVol){
         new Funcionario(cod,name);

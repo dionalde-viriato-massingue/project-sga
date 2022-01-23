@@ -25,6 +25,9 @@ public class Docente extends JFrame implements ActionListener {
     JComboBox cbIdade,cbNac,cbCurso,cbProv;
     JRadioButton rbM,rbF,rbEstado,rbS,rbC,rbSim,rbNao;
     ButtonGroup bgS,bgE,bgN;
+     DocenteCadController docenteCont = new DocenteCadController();
+    ArrayList<DocenteCadVO> list = docenteCont.countDocentes();
+    
     public Docente(){
         
     setTitle("Cadastro Docente");
@@ -40,7 +43,7 @@ public class Docente extends JFrame implements ActionListener {
      
      l6= new JLabel("Codigo: ");
      l6.setBounds(150,250, 200,98);
-     lCod= new JLabel("92220");
+     lCod= new JLabel(5000+list.size()+"");
      lCod.setBounds(210,286, 200,28);
     
      l7= new JLabel("Contacto: ");
@@ -244,10 +247,11 @@ public class Docente extends JFrame implements ActionListener {
        
        
        DocenteCadController dc = new DocenteCadController(id,nome,data,sexo,cadeira, facul,pais,prov,contacto);
-          
-                    
+     
+       
+        lCod.setText(5001+list.size()+"");            
         tNome.setText("");
-        tCod.setText("");
+        tData.setText("");
         tCont.setText("");
         tFacul.setText("");
 

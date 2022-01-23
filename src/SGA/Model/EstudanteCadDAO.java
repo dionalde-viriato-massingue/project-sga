@@ -43,7 +43,19 @@ public class EstudanteCadDAO {
        } catch (Exception e) {
          JOptionPane.showMessageDialog(null, "Insersao Estudante sql"+e.getMessage());   
        }
-  
+     try {
+    
+           String sql2="Insert Into Usuario(nome,senha,categoria) values (?,?,'Estudante')";
+           pstm= conn.prepareStatement(sql2);
+           pstm.setString(1, estudant.getNome());
+           pstm.setInt(2, estudant.getId());
+           
+           pstm.execute();
+           pstm.close();
+           JOptionPane.showMessageDialog(null, "Usuario inserido com sucessio");
+       } catch (Exception e) {
+         JOptionPane.showMessageDialog(null, "Usuario sql"+e.getMessage());   
+       }
         
        
    }
@@ -70,6 +82,24 @@ public class EstudanteCadDAO {
            }
        } catch (Exception e) {
          JOptionPane.showMessageDialog(null, "Recuperar Estudante"+e.getMessage());  
+       }
+   return list;}
+       
+        public ArrayList<EstudanteCadVO> countEstudantes(){
+        String sql2 ="select  nome from Estudante";
+       try {
+           pstm=conn.prepareStatement(sql2);
+           rs= pstm.executeQuery();
+           
+           while(rs.next()){
+               EstudanteCadVO estudante = new EstudanteCadVO();
+               estudante.setNome(rs.getString("nome"));
+  
+               list.add(estudante);
+           
+           }
+       } catch (Exception e) {
+         JOptionPane.showMessageDialog(null, "count Estudante"+e.getMessage());  
        }
    return list;}
 }
